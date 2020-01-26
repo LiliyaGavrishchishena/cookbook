@@ -1,7 +1,9 @@
 import axios from 'axios';
 import actions from './recipesActions';
 
-// axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL =
+  (process.env.PORT && `http://localhost:${process.env.PORT}`) ||
+  'http://localhost:8000';
 
 const getRecipes = url => async dispatch => {
   try {
