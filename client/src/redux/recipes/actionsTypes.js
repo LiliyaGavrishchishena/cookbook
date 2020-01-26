@@ -1,0 +1,14 @@
+const FETCH_REQUEST = 'recipe/FETCH_REQUEST';
+const FETCH_SUCCESS = 'recipe/FETCH_SUCCESS';
+const FETCH_ERROR = 'recipe/FETCH_ERROR';
+
+const ADD_RECIPE = 'recipe/ADD_RECIPE';
+const UPDATE_RECIPE = 'recipe/UPDATE_RECIPE';
+
+export default {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  ADD_RECIPE,
+  UPDATE_RECIPE
+};
