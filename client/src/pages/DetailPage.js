@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { recipesOperations } from '../redux/recipes';
-
+//components
 import UpdateForm from '../components/UpdateForm';
 import VersionList from '../components/VersionList';
 

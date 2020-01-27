@@ -3,6 +3,8 @@ const config = require('config');
 const mongoose = require('mongoose');
 const path = require('path');
 
+const PORT = process.env.PORT || config.get('port') || 8000;
+
 const app = express();
 
 app.use(function(req, res, next) {
@@ -17,15 +19,16 @@ app.use(function(req, res, next) {
 
 app.use(express.json({ extended: true }));
 
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, './client/build')));
+
+// Answer API requests.
 app.use('/', require('./routes/recipe.routes'));
 
-app.use('/', express.static(path.join(__dirname, 'client', 'build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
-
-const PORT = process.env.PORT || config.get('port') || 8000;
 
 async function start() {
   try {

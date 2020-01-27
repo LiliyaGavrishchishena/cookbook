@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { recipesSelectors, recipesOperations } from '../../redux/recipes';
 // moment
@@ -14,6 +14,13 @@ class VersionList extends Component {
     const { recipes } = this.props;
     return (
       <>
+        <h3 className="hand blue-grey-text center-align">List of versions</h3>
+        <div className="row">
+          <Link className="col s12 btn waves-effect waves-light" to={'/'}>
+            Go Back
+          </Link>
+        </div>
+
         <ul className="row">
           {recipes.map(recipe => (
             <li key={recipe._id} className="col s12">
@@ -23,8 +30,8 @@ class VersionList extends Component {
                 </div>
                 <div className="card-content">{recipe.description}</div>
                 <div className="card-content">
-                  <span>Date of update:</span>
-                  {moment(recipe.update).format('DD.MM.YYYY')}
+                  <span>Date of update: </span>
+                  {moment(recipe.update).format('DD.MM.YYYY, h:mm:ss')}
                 </div>
               </div>
             </li>

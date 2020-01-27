@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Cookbook with MERN stack",
   "main": "app.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
@@ -12,8 +15,15 @@
   },
   "keywords": [
     "mern",
-    "react"
+    "react",
+    "node",
+    "heroku",
+    "create-react-app"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LiliyaGavrishchishena/cookbook.git"
+  },
   "author": "Liliya Gavrishchishena <liliya.gavrishchishena@gmail.com>",
   "license": "ISC",
   "dependencies": {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { recipesOperations } from '../../redux/recipes';
-
+//styles
 import styles from './RecipeForm.module.css';
 
 const INITIAL_STATE = {
